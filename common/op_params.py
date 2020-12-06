@@ -98,6 +98,9 @@ class opParams:
                         'corollaTSS2_use_indi': Param(False, bool, 'Enable this to use INDI for lat with your TSS2 Corolla'),
                         'rav4TSS2_use_indi': Param(False, bool, 'Enable this to use INDI for lat with your TSS2 RAV4'),
                         'standstill_hack': Param(False, bool, 'Some cars support stop and go, you just need to enable this')}
+                        ##
+                        #  ONLY USED FOR HYUNDAI
+                        ##
                         'MdpsHarnessEnabled': Param(False, bool, 'Enable MDPS Harness support'),
                         'SccEnabled': Param(True, bool, 'Car has stock SCC'),
                         'SccHarnessPresent': Param(False, bool, 'Car has SCC Harness( scc moved to bus 2)'),
@@ -107,8 +110,10 @@ class opParams:
                         'enableLKASbutton': Param(True, bool, 'general toggle to enable LKAS button, LKAS button press will cancel OP steer'),
                         'smartMDPS': Param(True, bool, 'Toggle to enable smart MDPS'),
                         'nonlinearsas': Param(True, bool, 'Toggle to enable non linear desired steering angle based tune'),
+                        'Enable_INDI': Param(False, bool, 'Toggle to enable INDI'),
                         'uniqueID': Param(None, [type(None), str], 'User\'s unique ID')
                        }
+                      
     self._params_file = '/data/op_params.json'
     self._backup_file = '/data/op_params_corrupt.json'
     self._last_read_time = sec_since_boot()
