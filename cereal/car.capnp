@@ -102,7 +102,12 @@ struct CarEvent @0x9b1657f34caf3ad3 {
     modeldLagging @89;
     deviceFalling @90;
     fanMalfunction @91;
-
+    preKeepHandsOnWheel @92;
+    promptKeepHandsOnWheel @93;
+    keepHandsOnWheel @94;
+    visiononlyWarning @ 95;
+    belowSteerSpeedDing @ 96;
+    
     gasUnavailableDEPRECATED @3;
     dataNeededDEPRECATED @16;
     modelCommIssueDEPRECATED @27;
@@ -115,6 +120,7 @@ struct CarEvent @0x9b1657f34caf3ad3 {
     canErrorPersistentDEPRECATED @83;
     focusRecoverActiveDEPRECATED @86;
     neosUpdateRequiredDEPRECATED @88;
+    
   }
 }
 
