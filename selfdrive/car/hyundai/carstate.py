@@ -135,7 +135,6 @@ class CarState(CarStateBase):
       ret.gas = cp.vl["E_EMS11"]['Accel_Pedal_Pos'] / 256.
     elif self.CP.carFingerprint in HYBRID_VEH:
       ret.gas = cp.vl["EV_PC4"]['CR_Vcu_AccPedDep_Pc']
-    else:
     elif self.CP.emsAvailable:
       ret.gas = cp.vl["EMS12"]['PV_AV_CAN'] / 100
 
