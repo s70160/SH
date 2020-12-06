@@ -93,23 +93,22 @@ class opParams:
                         'support_white_panda': Param(False, bool, 'Enable this to allow engagement with the deprecated white panda.\n'
                                                                   'localizer might not work correctly'),
                         'slowdown_for_curves': Param(True, bool, 'Whether your car will slow down for curves using the old planner code from 0.5/0.6'),
-
                         'prius_use_pid': Param(False, bool, 'This enables the PID lateral controller with new a experimental derivative tune\nFalse: stock INDI, True: TSS2-tuned PID'),
                         'use_lqr': Param(False, bool, 'Enable this to use LQR as your lateral controller over default with any car'),
                         'corollaTSS2_use_indi': Param(False, bool, 'Enable this to use INDI for lat with your TSS2 Corolla'),
                         'rav4TSS2_use_indi': Param(False, bool, 'Enable this to use INDI for lat with your TSS2 RAV4'),
                         'standstill_hack': Param(False, bool, 'Some cars support stop and go, you just need to enable this')}
+                        
                         'MdpsHarnessEnabled': Param(False, bool, 'Enable MDPS Harness support'),
- 
-                        'SccEnabled': Param(True, bool, 'Car has stock SCC'),
-                        'SccHarnessPresent': Param(False, bool, 'Car has SCC Harness( scc moved to bus 2)'),
-                        'LongControlEnabled': Param(False, bool, 'only for NON SCC car, OP will send SCC message'),
                         'EnableOPwithCC': Param(False, bool, 'Turn off if OP should not depend on SCC to engage'),
                         'RadarDisableEnabled': Param(False, bool, 'Turn on for Stock Radar to disable'),
                         'enableLKASbutton': Param(True, bool, 'general toggle to enable LKAS button, LKAS button press will cancel OP steer'),
                         'smartMDPS': Param(True, bool, 'Toggle to enable smart MDPS'),
                         'nonlinearsas': Param(True, bool, 'Toggle to enable non linear desired steering angle based tune'),
                         'Enable_INDI': Param(False, bool, 'Toggle to enable INDI'),
+                        'SccEnabled': Param(True, bool, 'Car has stock SCC'),
+                        'SccHarnessPresent': Param(True, bool, 'Car has SCC Harness( scc moved to bus 2)'),
+                        'LongControlEnabled': Param(True, bool 'only for NON SCC car, OP will send SCC message'),
 
     self._params_file = '/data/op_params.json'
     self._backup_file = '/data/op_params_corrupt.json'
