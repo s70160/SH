@@ -101,6 +101,7 @@ class opParams:
                         'standstill_hack': Param(False, bool, 'Some cars support stop and go, you just need to enable this')}
                         'MdpsHarnessEnabled': Param(False, bool, 'Enable MDPS Harness support'),
                         'SccEnabled': Param(True, bool, 'Car has stock SCC'),
+                        'SccEnabled': Param(True, bool, 'Car has stock SCC'),
                         'SccHarnessPresent': Param(False, bool, 'Car has SCC Harness( scc moved to bus 2)'),
                         'LongControlEnabled': Param(False, bool, 'only for NON SCC car, OP will send SCC message'),
                         'EnableOPwithCC': Param(False, bool, 'Turn off if OP should not depend on SCC to engage'),
