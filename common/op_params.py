@@ -107,7 +107,6 @@ class opParams:
                         'enableLKASbutton': Param(True, bool, 'general toggle to enable LKAS button, LKAS button press will cancel OP steer'),
                         'smartMDPS': Param(True, bool, 'Toggle to enable smart MDPS'),
                         'nonlinearsas': Param(True, bool, 'Toggle to enable non linear desired steering angle based tune'),
-                        'Enable_INDI': Param(False, bool, 'Toggle to enable INDI'),
                         'uniqueID': Param(None, [type(None), str], 'User\'s unique ID')
                        }
     self._params_file = '/data/op_params.json'
