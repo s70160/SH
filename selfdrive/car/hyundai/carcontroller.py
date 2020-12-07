@@ -312,7 +312,7 @@ class CarController():
       self.fca11supcnt = CS.fca11init["Supplemental_Counter"]
 
     # 20 Hz LFA MFA message
-    if frame % 5 == 0 and self.car_fingerprint in [CAR.SONATA, CAR.PALISADE, CAR.IONIQ]:
+    if frame % 5 == 0 and self.car_fingerprint in [CAR.SONATA, CAR.PALISADE, CAR.IONIQ_HEV]:
       can_sends.append(create_lfa_mfa(self.packer, frame, enabled))
       
       can_sends.append(create_mdps12(self.packer, frame, CS.mdps12))
