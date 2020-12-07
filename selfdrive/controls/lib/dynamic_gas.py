@@ -1,5 +1,6 @@
 from selfdrive.car.toyota.values import CAR as CAR_TOYOTA
 from selfdrive.car.honda.values import CAR as CAR_HONDA
+from selfdrive.car.honda.values import CAR as CAR_HYUNDAI
 from common.numpy_fast import clip, interp
 import numpy as np
 
@@ -8,7 +9,7 @@ class DynamicGas:
   def __init__(self, CP, candidate):
     self.toyota_candidates = [attr for attr in dir(CAR_TOYOTA) if not attr.startswith("__")]
     self.honda_candidates = [attr for attr in dir(CAR_HONDA) if not attr.startswith("__")]
-
+    self.hyundai_candidates = [attr for attr in dir(CAR_HYUNDAI) if not attr.startswith("__")]
     self.candidate = candidate
     self.CP = CP
     self.set_profile()
@@ -76,7 +77,7 @@ class DynamicGas:
         y = [0.218, 0.222, 0.233, 0.25, 0.273, 0.294, 0.337, 0.362, 0.38, 0.389, 0.398, 0.41, 0.421, 0.459, 0.512, 0.564, 0.621]
         y = [interp(i, [0.218, (0.218 + 0.398) / 2, 0.398], [1.075 * i, i * 1.05, i]) for i in y]  # more gas at lower speeds up until ~40 mph
         self.supported_car = True
-      elif self.candidate == CAR_TOYOTA.PRIUS:
+      elif self.candidate == CAR_HYUNDAI.IONIQ_HEV:
         x = [0.0, 1.4082, 2.8031, 4.2266, 5.3827, 6.1656, 7.2478, 8.2831, 10.2447, 12.964, 15.423, 18.119, 20.117, 24.4661, 29.0581, 32.7101, 35.7633]
         y = [0.3, 0.304, 0.315, 0.342, 0.365, 0.386, 0.429, 0.454, 0.472, 0.48, 0.489, 0.421, 0.432, 0.480, 0.55, 0.621, 0.7]
         self.supported_car = True
