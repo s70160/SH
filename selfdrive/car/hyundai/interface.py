@@ -52,14 +52,7 @@ class CarInterface(CarInterfaceBase):
     
     
 
-    ret.lateralTuning.pid.kpBP = [0., 10., 30.]
-    ret.lateralTuning.pid.kpV = [0.01, 0.02, 0.03]
-    ret.lateralTuning.pid.kiBP = [0., 10., 30.]
-    ret.lateralTuning.pid.kiV = [0.001, 0.0015, 0.002]
-    ret.lateralTuning.pid.kfBP = [0., 10., 30.]
-    ret.lateralTuning.pid.kfV = [0.000015, 0.00002, 0.000025]
 
-    ret.lateralTuning.pid.kdBP, ret.lateralTuning.pid.kdV = [[0.], [0.]]
 
     if opParams().get('Enable_INDI'):
       ret.lateralTuning.init('indi')
