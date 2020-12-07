@@ -64,6 +64,7 @@ class LanePlanner:
 
   def update_d_poly(self, v_ego):
     # only offset left and right lane lines; offsetting p_poly does not make sense
+    CAMERA_OFFSET = 0.06
     self.l_poly[3] += CAMERA_OFFSET
     self.r_poly[3] += CAMERA_OFFSET
     if CAMERA_OFFSET != STANDARD_CAMERA_OFFSET:
