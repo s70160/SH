@@ -79,8 +79,7 @@ class LatPIDController():
     setpoint = clip(setpoint, -120., 120.)
 
     error = float(apply_deadzone(setpoint - measurement, deadzone))
-    self.p = error * self.k_p
-    d = self.k_d * (error - self.last_error)
+    self.p = error * (self.k_p + self.nl_p)
     self.f = feedforward * self.k_f
 
     if override:
