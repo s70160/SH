@@ -330,7 +330,7 @@ class CarInterface(CarInterfaceBase):
           events.add(EventName.pcmDisable)
 
     
-    ret.events = events.to_msg() I 
+    ret.events = events.to_msg() 
 
     self.CS.out = ret.as_reader()
     return self.CS.out
