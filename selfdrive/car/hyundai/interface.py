@@ -248,7 +248,7 @@ class CarInterface(CarInterfaceBase):
     # speeds
     ret.steeringRateLimited = self.CC.steer_rate_limited if self.CC is not None else False
 
-    events, events_arne182 = self.create_common_events(ret)
+    
 
     # low speed steer alert hysteresis logic (only for cars with steer cut off above 10 m/s)
     if ret.vEgo < (self.CP.minSteerSpeed + .56) and self.CP.minSteerSpeed > 10. and self.CC.enabled:
