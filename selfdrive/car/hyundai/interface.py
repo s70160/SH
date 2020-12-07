@@ -131,7 +131,7 @@ class CarInterface(CarInterfaceBase):
       ret.mass = 1490. + STD_CARGO_KG
       ret.wheelbase = 2.7
       ret.steerRatio = 13.73 * 1.15
-      ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.723], [0.0428]]
+      ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.25], [0.0428]]
       ret.lateralTuning.pid.kf = 0.00006
     elif candidate == CAR.KIA_FORTE:
       ret.mass = 3558. * CV.LB_TO_KG
@@ -330,7 +330,7 @@ class CarInterface(CarInterfaceBase):
           events.add(EventName.pcmDisable)
 
     
-    ret.events = events.to_msg()
+    ret.events = events.to_msg() I 
 
     self.CS.out = ret.as_reader()
     return self.CS.out
