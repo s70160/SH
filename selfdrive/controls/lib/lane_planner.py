@@ -4,7 +4,6 @@ from cereal import log
 from common.op_params import opParams
 
 
-CAMERA_OFFSET = opParams().get('Camera_Offset')  # m from center car to camera
 
 def compute_path_pinv(length=50):
   deg = 3
