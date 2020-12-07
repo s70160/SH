@@ -67,8 +67,7 @@ class LanePlanner:
     CAMERA_OFFSET = 0.06
     self.l_poly[3] += CAMERA_OFFSET
     self.r_poly[3] += CAMERA_OFFSET
-    if CAMERA_OFFSET != STANDARD_CAMERA_OFFSET:
-      self.p_poly[3] += CAMERA_OFFSET - STANDARD_CAMERA_OFFSET  # only offst path based on difference of new offset and standard
+    
     # Reduce reliance on lanelines that are too far apart or
     # will be in a few seconds
     l_prob, r_prob = self.l_prob, self.r_prob
