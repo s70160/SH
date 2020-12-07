@@ -56,7 +56,12 @@ class CarInterface(CarInterfaceBase):
 
     if opParams().get('Enable_INDI'):
       ret.lateralTuning.init('indi')
-      
+      ret.lateralTuning.indi.innerLoopGain = 4.0
+      ret.lateralTuning.indi.outerLoopGainBP = [0]
+      ret.lateralTuning.indi.outerLoopGainV = [3.0]
+      ret.lateralTuning.indi.timeConstant = 0.1 if ret.hasZss else 1.0
+      ret.lateralTuning.indi.actuatorEffectiveness = 1.0
+        
 
     if candidate in [CAR.SANTA_FE, CAR.SANTA_FE_2017]:
       ret.mass = 3982. * CV.LB_TO_KG + STD_CARGO_KG
@@ -131,8 +136,7 @@ class CarInterface(CarInterfaceBase):
       ret.mass = 1490. + STD_CARGO_KG
       ret.wheelbase = 2.7
       ret.steerRatio = 13.73 * 1.15
-      ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.25], [0.0428]]
-      ret.lateralTuning.pid.kf = 0.00006
+     
     elif candidate == CAR.KIA_FORTE:
       ret.mass = 3558. * CV.LB_TO_KG
       ret.wheelbase = 2.80
