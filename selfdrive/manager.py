@@ -82,6 +82,8 @@ from multiprocessing import Process
 # Run scons
 spinner = Spinner(noop=(__name__ != "__main__" or not ANDROID))
 spinner.update("0")
+if __name__ != "__main__":
+  spinner.close()
 
 if not prebuilt:
   for retry in [True, False]:
@@ -127,7 +129,8 @@ if not prebuilt:
             print("....%d" % i)
             time.sleep(1)
           subprocess.check_call(["scons", "-c"], cwd=BASEDIR, env=env)
-          shutil.rmtree("/tmp/scons_cache")
+          shutil.rmtree("/tmp/scons_cache", ignore_errors=True)
+          shutil.rmtree("/data/scons_cache", ignore_errors=True)
         else:
           print("scons build failed after retry")
           sys.exit(1)
@@ -566,6 +569,12 @@ def main():
     ("LastUpdateTime", datetime.datetime.utcnow().isoformat().encode('utf8')),
     ("OpenpilotEnabledToggle", "1"),
     ("LaneChangeEnabled", "1"),
+    ("LongControlEnabled", "1"),
+    ("RadarDisableEnabled", "0"),
+    ("MdpsHarnessEnabled", "0"),
+    ("SccEnabled", "1"),
+    ("EnableOPwithCC", "0"),
+    ("SccHarnessPresent", "1"),
     ("IsDriverViewEnabled", "0"),
   ]
 
