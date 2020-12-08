@@ -36,7 +36,7 @@ class CarInterface(CarInterfaceBase):
     ret.steerActuatorDelay = 0.3  # Default delay not used, check pathplanner for BPs
     ret.steerRateCost = 0.5
     ret.steerLimitTimer = 0.1
-    tire_stiffness_factor = 0.7
+    tire_stiffness_factor = 0.685
 
     #Long tuning Params -  make individual params for cars, baseline Hyundai genesis
     ret.longitudinalTuning.kpBP = [0., .3, 10., 35.]
@@ -56,11 +56,11 @@ class CarInterface(CarInterfaceBase):
 
     if opParams().get('Enable_INDI'):
       ret.lateralTuning.init('indi')
-      ret.lateralTuning.indi.innerLoopGain = 4.0
+      ret.lateralTuning.indi.innerLoopGain = 3.6
       ret.lateralTuning.indi.outerLoopGainBP = [0]
-      ret.lateralTuning.indi.outerLoopGainV = [3.0]
+      ret.lateralTuning.indi.outerLoopGainV = [2.6]
       ret.lateralTuning.indi.timeConstant = 0.1 if ret.hasZss else 1.0
-      ret.lateralTuning.indi.actuatorEffectiveness = 1.0
+      ret.lateralTuning.indi.actuatorEffectiveness = 1.5
         
 
     if candidate in [CAR.SANTA_FE, CAR.SANTA_FE_2017]:
