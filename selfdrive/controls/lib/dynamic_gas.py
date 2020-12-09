@@ -1,6 +1,6 @@
 from selfdrive.car.toyota.values import CAR as CAR_TOYOTA
 from selfdrive.car.honda.values import CAR as CAR_HONDA
-from selfdrive.car.honda.values import CAR as CAR_HYUNDAI
+from selfdrive.car.hyundai.values import CAR as CAR_HYUNDAI
 from common.numpy_fast import clip, interp
 import numpy as np
 
