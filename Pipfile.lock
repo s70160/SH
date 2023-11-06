@@ -282,10 +282,13 @@
         },
         "libusb1": {
             "hashes": [
-                "sha256:240f65ac70ba3fab77749ec84a412e4e89624804cb80d6c9d394eef5af8878d6"
+                "sha256:4ee9b0a55f8bd0b3ea7017ae919a6c1f439af742c4a4b04543c5fd7af89b828c",
+                "sha256:77a06ecfb3d002d7c2ce369e28d0138b292fe8db8a3d102b73fda231a716dd35",
+                "sha256:9d9f16e2c199cab91f48ead585d3f5ec7e8e4be428a25ddfed22abf786fa9b3a",
+                "sha256:bc7874302565721f443a27d8182fcc7152e5b560523f12f1377b130f473e4a0c"
             ],
             "index": "pypi",
-            "version": "==1.8"
+            "version": "==3.1.0"
         },
         "logentries": {
             "git": "https://github.com/commaai/le_python.git",
